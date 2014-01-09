@@ -61,3 +61,13 @@ chmod +x user-login.sh
 # speedtest
 wget http://proxy.ninit.us/speedtest_cli.py
 
+# autokill
+cd /usr/sbin/
+wget https://raw2.github.com/dutyzn/install/master/usermon
+wget https://raw2.github.com/dutyzn/install/master/userlmt
+chmod 755 usermon
+chmod 755 userlmt
+wget https://raw2.github.com/dutyzn/install/master/autokill.sh
+chmod +x autokill.sh
+screen -AmdS check /usr/sbin/autokill.sh
+sed -i '$ i\screen -AmdS check /usr/sbin/autokill.sh' /etc/rc.local
