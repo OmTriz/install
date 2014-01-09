@@ -53,3 +53,11 @@ rpm -i webmin-1.660-1.noarch.rpm;
 rm webmin-1.660-1.noarch.rpm
 service webmin restart
 
+# user login
+wget https://raw2.github.com/dutyzn/install/master/user-login.sh
+sed -i 's/auth.log/secure/g' user-login.sh
+chmod +x user-login.sh
+
+# speedtest
+wget http://proxy.ninit.us/speedtest_cli.py
+
