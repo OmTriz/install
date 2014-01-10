@@ -35,7 +35,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 22 -p 109 -p 110 -p 443\"" > /etc/init.d/dropbear
+echo "OPTIONS=\"-p 22 -p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
