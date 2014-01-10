@@ -23,6 +23,7 @@ sed -i '/\[remi\]/ a\priority=20' /etc/yum.repos.d/remi.repo
 sed -i -e "/^\[remi\]/,/^\[.*\]/ s|^\(enabled[ \t]*=[ \t]*0\\)|enabled=1|" /etc/yum.repos.d/remi.repo
 sed -i -e "/^\[rpmforge-extras\]/,/^\[.*\]/ s|^\(enabled[ \t]*=[ \t]*0\\)|enabled=1|" /etc/yum.repos.d/rpmforge.repo
 yum -y update
+yum -y groupinstall 'Development Tools'
 
 #nano
 yum -y install nano
