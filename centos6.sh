@@ -19,13 +19,13 @@ yum -y install nano
 
 # setting port ssh
 echo "Port 143" >> /etc/ssh/sshd_config
-echo "Port 995" >> /etc/ssh/sshd_config
+echo "Port 109" >> /etc/ssh/sshd_config
 service sshd restart
 chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 22 -p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 22 -p 110 -p 443\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
