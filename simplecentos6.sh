@@ -30,13 +30,6 @@ echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
 
-# vnstat
-yum -y install vnstat
-vnstat -u -i venet0
-sed -i 's/eth0/venet0/g' /etc/sysconfig/vnstat
-echo "MAILTO=root" > /etc/cron.d/vnstat
-echo "*/5 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
-
 # install webmin
 wget http://prdownloads.sourceforge.net/webadmin/webmin-1.660-1.noarch.rpm
 rpm -i webmin-1.660-1.noarch.rpm;
