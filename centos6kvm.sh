@@ -11,7 +11,7 @@ echo 0 > /selinux/enforce
 sed -i 's/SELINUX=enforcing/SELINUX=disable/g'  /etc/sysconfig/selinux
 
 # install wget and curl
-yum -y install wget curl
+yum -y install wget curl screen
 
 # remove unused
 yum -y remove sendmail;
