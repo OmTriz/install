@@ -43,6 +43,7 @@ service dropbear restart
 chkconfig dropbear on
 
 # vnstat
+yum -y install vnstat
 vnstat -u -i eth0
 echo "MAILTO=root" > /etc/cron.d/vnstat
 echo "*/5 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
