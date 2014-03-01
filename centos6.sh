@@ -6,10 +6,6 @@ cd
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# disable se linux
-echo 0 > /selinux/enforce
-sed -i 's/SELINUX=enforcing/SELINUX=disable/g' /etc/sysconfig/selinux
-
 # install wget and curl
 yum -y install wget curl screen
 
@@ -64,10 +60,7 @@ chmod +x user-login.sh
 wget http://proxy.ninit.us/speedtest_cli.py
 
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/arieonline/autoscript/master/conf/badvpn-udpgw"
-if [ "$OS" == "x86_64" ]; then
-wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/arieonline/autoscript/master/conf/badvpn-udpgw64"
-fi
+wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/dutyzn/install/master/badvpn-udpgw"
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.d/rc.local
 chmod +x /usr/bin/badvpn-udpgw
