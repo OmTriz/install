@@ -52,7 +52,7 @@ rm webmin-1.660-1.noarch.rpm
 service webmin restart
 
 # user login
-wget https://raw2.github.com/dutyzn/install/master/user-login.sh
+wget https://raw2.github.com/dutyzn/install/master/user-login.sh --no-check-certificate
 sed -i 's/auth.log/secure/g' user-login.sh
 chmod +x user-login.sh
 
@@ -60,7 +60,7 @@ chmod +x user-login.sh
 wget http://proxy.ninit.us/speedtest_cli.py
 
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/dutyzn/install/master/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/dutyzn/install/master/badvpn-udpgw" --no-check-certificate
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.d/rc.local
 chmod +x /usr/bin/badvpn-udpgw
